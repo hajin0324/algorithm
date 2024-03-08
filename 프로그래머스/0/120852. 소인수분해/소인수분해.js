@@ -4,13 +4,15 @@ function solution(n) {
     
     while (n != 1) {
         if (n % i == 0) {
-            ans.push(i)
-            
-            while (n % i == 0) {
-                n /= i;
+            if (!ans.indexof(i)) {
+                ans.push(i);
             }
+            ans /= i;
+        }  
+        else {
+            i++;
         }
-        i++;
     }
+        
     return ans;
 }
