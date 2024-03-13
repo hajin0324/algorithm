@@ -13,10 +13,10 @@ def solution(board):
                 bomb[i][j] = 1
                 
                 for dx, dy in zip(dxs, dys):
-                    dx, dy = i + dx, j + dy
+                    x, y = i + dx, j + dy
                     
-                    if in_range(dx, dy, len(board)):
-                        bomb[dx][dy] = 1
+                    if in_range(x, y, len(board)):
+                        bomb[x][y] = 1
                         
     cnt = 0
     for rows in bomb:
