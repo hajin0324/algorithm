@@ -1,11 +1,10 @@
 function solution(chicken) {
-    let coupon = chicken % 10 + parseInt(chicken / 10)
-    let cnt = parseInt(chicken / 10)
+    let service = 0
     
-    while (coupon >= 10) {
-        cnt += parseInt(coupon / 10)
-        coupon = parseInt(coupon / 10) + coupon % 10
+    while (chicken >= 10) {
+        service += Math.floor(chicken / 10)
+        chicken = chicken % 10 + Math.floor(chicken / 10)
     }
     
-    return cnt
+    return service
 }
