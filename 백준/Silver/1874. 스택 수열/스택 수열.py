@@ -7,29 +7,21 @@ can = True
 for _ in range(n):
   num = int(input())
 
-  if not len(stack):
-    stack.append(next)
-    next += 1
-    result.append("+")
-
-  while True:
-    if num == stack[-1]:
-      stack.pop()
-      result.append("-")
-      break
-    elif num < stack[-1]:
-      if num < next:
-        can = False
-        break
-      else:
-        stack.pop()
-        result.append("-")
-    else:
+  if num >= next:
+    while num >= next:
       stack.append(next)
       next += 1
       result.append("+")
+    stack.pop()
+    result += "-"
 
-
+  else:
+    if num < stack[-1]:
+      can = False
+      break
+    else:
+      stack.pop()
+      result.append("-")
 
 if not can:
   print("NO")
