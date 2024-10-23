@@ -29,8 +29,8 @@ def merge(left, right):
       result.append(right[rc])
       rc += 1
 
-  result.extend(left[lc:])
-  result.extend(right[rc:])
+  result += left[lc:]
+  result += right[rc:]
 
   return result
 
